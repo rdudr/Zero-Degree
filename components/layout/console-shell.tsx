@@ -5,7 +5,7 @@ import { usePathname } from "next/navigation";
 import { LogoutButton } from "@/components/auth/logout-button";
 import { UploadButton } from "@/components/layout/upload-button";
 import { cn } from "@/lib/utils";
-import { Building2, FileText, LayoutDashboard, Menu, Snowflake, Waves, Wind, X } from "lucide-react";
+import { Building2, FileText, LayoutDashboard, Menu, Sigma, Snowflake, Waves, Wind, X } from "lucide-react";
 import { useEffect, useState } from "react";
 
 const nav = [
@@ -15,6 +15,7 @@ const nav = [
   { href: "/chillers", label: "Chillers & AHUs", icon: Snowflake },
   { href: "/cooling-towers", label: "Cooling Towers", icon: Waves },
   { href: "/report", label: "Report & Share", icon: FileText },
+  { href: "/formulas", label: "Formulas", icon: Sigma },
 ];
 
 export function ConsoleShell({
