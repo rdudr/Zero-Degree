@@ -1,0 +1,33 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// One row per report submitted from a device (Submit / Email / offline-queue
+// retry). `jobId` is the device's own id for that submission, so a retried
+// job lands on the same row instead of creating a duplicate.
+//
+// `payload` is the whole Zero Degree data set as JSON (profile, acUnits,
+// chillers, coolingTowers) — the same records the Excel workbook carries.
+// "Pull team data" on the Report page reads every submission for a company
+// and merges them on the device with the same rule as the Excel import
+// (machine tag per equipment type, newest save wins).
+model Submission {
+  id           String   @id @default(cuid())
+  jobId        String   @unique
+  companyName  String
+  companyKey   String
+  reporterName String
+  acCount      Int      @default(0)
+  chillerCount Int      @default(0)
+  ctCount      Int      @default(0)
+  payload      Json
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([companyKey, createdAt])
+}

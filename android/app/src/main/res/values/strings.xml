@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Zero Degree</string>
+    <string name="title_activity_main">Zero Degree</string>
+    <string name="package_name">com.kisem.zerodegree</string>
+    <string name="custom_url_scheme">com.kisem.zerodegree</string>
+</resources>

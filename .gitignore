@@ -1,0 +1,70 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# Local binary uploads (use object storage in production)
+/uploads
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+
+# Test & Script Files
+test-*.ts
+proxy.ts
+
+# Sample / Sensitive Data
+public/samples/
+
+# Android JDK (too large for git)
+/android/jdk21/
+android/jdk21.zip
+/jdk/
+jdk.zip
+
+# local tooling
+/.claude/
+/app_api_backup/
